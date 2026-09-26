@@ -1,14 +1,14 @@
 import streamlit as st
+
 st.title("AI Chatbot")
-st.write("AI Chatbot")
 
-st.sidebar.button("drop")
-prompt=text=st.text_input("Ask me ")
+# Create a text input field for user input
+user_input = st.text_input("Ask me something")
 
-if st.button("send"):
-        messages=[
-            {
-            "role":"user",
-            "content":prompt
-            }
-        ]
+# Create a submit button
+if st.button("Send"):
+    if user_input.strip():
+        # Display the text entered by the user
+        st.success(f"You entered: {user_input}")
+    else:
+        st.warning("Please enter some text first.")
